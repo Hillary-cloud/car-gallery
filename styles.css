@@ -74,3 +74,20 @@ h1{
     object-fit:  cover;
     border-radius: 8px;
 }
+
+.car-info{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.car-info h1 {
+    margin: 10px 0;
+    font-size: 32px;
+    color: #333;
+  }
+  
+  .car-info h3 {
+    margin: 5px 0;
+    color: #555;
+    font-weight: normal;
+  }
