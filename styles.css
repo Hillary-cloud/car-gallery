@@ -4,14 +4,25 @@ body{
     margin: 0;
     padding:20px;
     text-align: center;
-
 }
+
 h1{
     margin-bottom: 20px;
+    /* text-align: center; */
+}
+
+#searchInput{
+    padding:10px;
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: 16px;
+    /* display: flex; */
+    justify-content: center;
 }
 
 #filterButtons{
     margin-bottom: 20px;
+    text-align: center;
 }
 #filterButtons button{
     padding: 10px 15px;
@@ -47,4 +58,19 @@ h1{
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow:hidden
+}
+
+.details-container .car-image{
+    width: 100%;
+    max-height: 400px;
+    object-fit:  cover;
+    border-radius: 8px;
 }

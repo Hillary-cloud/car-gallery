@@ -34,6 +34,11 @@ const displayCars = (cars) => {
     // Clear any existing content inside the car container.
     carContainer.innerHTML = '';
 
+    if(cars.length === 0){
+        carContainer.innerHTML = "<p>No data found</p>"
+        return;
+    }
+
     // Loop through each car object in the `cars` array.
     cars.forEach((car) => {
 
@@ -51,6 +56,13 @@ const displayCars = (cars) => {
         <h2>${car.name}</h2>
         <p>Model: ${car.model}</p>
         `
+
+        // add click event to store car data in localStorage and navigate to details page
+        carCard.addEventListener('click', () => {
+            localStorage.setItem('selectedCar', JSON.stringify(car));
+            window.location.href = 'car-detail.html'
+        })
+
         // Append the car card to the car container on the webpage.
         carContainer.appendChild(carCard)
     })
@@ -84,6 +96,18 @@ const filterCarsByName = (name) => {
 
     displayCars(filteredCars)
 }
+
+const searchCars = (query) => {
+    const searchedCars = allCars.filter((car) => 
+        car.name.toLowerCase().includes(query.toLowerCase()) ||
+        car.model.toLowerCase().includes(query.toLowerCase())
+)
+    displayCars(searchedCars)
+}
+document.getElementById('searchInput').addEventListener('input', (event) => {
+    searchCars(event.target.value) //filter cars on input change
+})
+
 
 
 // Fetch and display car data when the page loads
